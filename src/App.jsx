@@ -1,12 +1,19 @@
 
 import './App.css'
+import Products from './components/Products'
+import Header from './Header'
+
 
 function App() {
 
 
   return (
     <>
-     <p>hlo</p>
+    
+      <Header />
+    <div className='max-w-[1280px] m-auto'>
+    <Products />
+    </div>
     </>
   )
 }
