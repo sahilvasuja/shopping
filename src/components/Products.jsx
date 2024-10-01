@@ -1,6 +1,7 @@
 import  { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
+import { toast } from 'react-toastify';
  const Products = () => {
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
@@ -19,6 +20,7 @@ import { addToCart } from '../redux/cartSlice';
       const handleAddToCart = (product) => {
         const quantity = 1;
         dispatch(addToCart({ ...product, quantity })); 
+        toast.success(`${product.title} added to cart!`);
       };
   return (
     <div className="p-4 ">

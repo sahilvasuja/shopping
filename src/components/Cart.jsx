@@ -1,6 +1,7 @@
 
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../redux/cartSlice'; 
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -8,6 +9,7 @@ const Cart = () => {
   const navigate = useNavigate(); 
   const handleRemove = (item) => {
     dispatch(removeFromCart(item.id)); 
+    toast.info(`${item.title} removed from cart`);
   };
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   return (

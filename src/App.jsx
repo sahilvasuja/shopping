@@ -4,7 +4,8 @@ import Cart from './components/Cart';
 
 import Products from './components/Products'
 import Header from './Header'
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
     </>
   )
 }
